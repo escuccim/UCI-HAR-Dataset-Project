@@ -9,7 +9,7 @@ Getting and Cleaning Data Course Project - UCI-HAR Data
 - Appropriately labels the data set with descriptive variable names.
 - From the data set in step 4, creates a second, independent tidy data set with the average of each variable for each activity and each subject.
 
-## Script
+## Scripts
 run_analysis.R will:
 - Download the data from a URL
 - Import the data from the files
@@ -24,6 +24,9 @@ The code can be run with:
 ```
 source("run_analysis.R")
 ```
+
+check.packages.R is a function to check if a package is installed and if not install it. It was taken from: https://gist.github.com/smithdanielle/9913897
+
 
 ## Code Book
 A code book has been included in CodeBook.md which describes the variables and transformations performed.
