@@ -75,6 +75,11 @@ print("Non-mean and std columns filtered out")
 
 ## Replace the activity codes with names in the classification column
 data <- merge(data, activity_names)[-1]
+# remove the id column
+data$id = NULL
+
+# turn the column into a factor
+data$label <- as.factor(data$label)
 
 # clear vars
 rm(activity_names)
@@ -102,10 +107,24 @@ names <- gsub("-$","",names)
 # replace the column names with the cleaned names
 names(data) <- names
 
-# clear vars
-rm(names)
-
 print("Columns renamed")
 
 
+## Create new data set with averages for each subject and variable
 
+# load the function to check if packages are installed
+source("check.packages.R")
+
+# check that the packages are installed, if not install them
+packages <- c("dplyr","tidyr")
+check.packages(packages)
+
+# load the libraries
+library(dplyr)
+library(tidyr)
+
+# group the data, summarize it, and then gather into a new data set where each row has its value the mean for one variable, one subject and one label
+new_data <- data %>% group_by(subject, label) %>% summarize_all(funs(mean)) %>% gather(variable, value, -label, -subject)
+
+# write the data to a file
+write.table(new_data, file="data_summary.txt")
