@@ -124,7 +124,7 @@ rm(packages)
 library(dplyr)
 library(tidyr)
 
-# group the data, summarize it, and then gather into a new data set where each row has its value the mean for one variable, one subject and one label
+# group the data, summarize it, and then gather into a new data set where each row has the mean grouped by subject and label
 summary_data <- data %>% group_by(subject, label) %>% summarize_all(funs(mean))
 
 # write the data to a file
