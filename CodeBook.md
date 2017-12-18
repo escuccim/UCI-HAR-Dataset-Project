@@ -87,3 +87,12 @@ The following columns contain the mean, grouped by subject and label:
 - frequency-bodybodygyrojerk-magnitude-mean             
 - frequency-bodybodygyrojerk-magnitude-std               
 - frequency-bodybodygyrojerk-magnitude-meanfreq  
+
+## Activity Labels
+Below are the activities which are the labels for the data
+1. WALKING
+2. WALKING_UPSTAIRS
+3. WALKING_DOWNSTAIRS
+4. SITTING
+5. STANDING
+6. LAYING
