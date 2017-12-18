@@ -7,24 +7,8 @@ This data is stored in the file "data/summary_data.txt" and in the data frame su
 The data has the following columns:
 - subject - id of the subject (int)
 - label - the activity for the row (factor)
-- variable - the name of the variable (chr)
-- value - the mean of the values for this subject, label and variable from the full dataset (dbl)
 
-## Full Data Set
-This data is stored in the file "data/tidy_data.txt" and in the data frame data.
-
-The data has the following columns:
-- subject - the id of the subject (int)
-- label - the activity label for the row (factor)
-
-The rest of the columns are columns from the original dataset which have been renamed for readability according to the following rules:
-- prefix "t" has been replaced by "time"
-- prefix "f" has been replaced by "frequency"
-- "acc" has been replaced with "accelaration"
-- "mag" has been replaced with magnitude
-- periods have been replaced with dashes
-
-These columns are:
+The following columns contain the mean, grouped by subject and label:
 - time-body-acceleration-mean-y                          
 - time-body-acceleration-mean-z                         
 - time-body-acceleration-std-x                           
@@ -103,5 +87,3 @@ These columns are:
 - frequency-bodybodygyrojerk-magnitude-mean             
 - frequency-bodybodygyrojerk-magnitude-std               
 - frequency-bodybodygyrojerk-magnitude-meanfreq  
-
-These columns correspond to the values in the "variable" column of the summary data.
