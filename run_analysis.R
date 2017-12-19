@@ -129,4 +129,3 @@ summary_data <- data %>% group_by(subject, label) %>% summarize_all(funs(mean))
 
 # write the data to a file
 write.table(summary_data, file="data/summary_data.txt", row.name=FALSE)
-write.table(data, file="data/tidy_data.txt")
